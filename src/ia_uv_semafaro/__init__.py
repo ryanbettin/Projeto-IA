@@ -1,2 +1,3 @@
-def main() -> None:
-    print("Hello from ia-uv-semafaro!")
+from main import main
+
+__all__ = ["main"]

@@ -1,5 +1,5 @@
 import argparse
-from ia_n_uv.utils import detectar_cores_e_formas
+from utils import detectar_cores_e_formas
 
 def main():
     parser = argparse.ArgumentParser(description="Detector de Sinal com Formas para Daltônicos")
