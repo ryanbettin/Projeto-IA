@@ -7,7 +7,10 @@ authors = [
     { name = "ryanbettin", email = "ryanbettin44@gmail.com" }
 ]
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+    "numpy>=2.2.6",
+    "opencv-python>=4.11.0.86",
+]
 
 [project.scripts]
 ia-uv-semafaro = "ia_uv_semafaro:main"
