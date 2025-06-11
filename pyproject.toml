@@ -1,0 +1,17 @@
+[project]
+name = "ia-uv-semafaro"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "ryanbettin", email = "ryanbettin44@gmail.com" }
+]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+ia-uv-semafaro = "ia_uv_semafaro:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
