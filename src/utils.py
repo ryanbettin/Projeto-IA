@@ -1,5 +1,8 @@
+# src/ia_uv_semafaro/utils.py
+
 import cv2
 import numpy as np
+from ia_uv_semafaro.algoritmos.MapaSemafaro import cor_para_forma
 
 def detectar_cores_e_formas(imagem_path: str):
     imagem = cv2.imread(imagem_path)
@@ -21,12 +24,6 @@ def detectar_cores_e_formas(imagem_path: str):
         "VERDE": [((40, 100, 100), (90, 255, 255))]
     }
 
-    forma_por_cor = {
-        "VERMELHO": "Círculo",
-        "AMARELO": "Triângulo",
-        "VERDE": "Quadrado"
-    }
-
     for cor, ranges in faixas.items():
         mascara_total = np.zeros(hsv.shape[:2], dtype=np.uint8)
         for faixa in ranges:
@@ -36,7 +33,7 @@ def detectar_cores_e_formas(imagem_path: str):
         pixels_detectados = cv2.countNonZero(mascara_total)
 
         if pixels_detectados > 500:
-            forma = forma_por_cor.get(cor, "Forma desconhecida")
+            forma = cor_para_forma(cor)
             resultados.append((cor, forma))
 
     return resultados
