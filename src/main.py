@@ -9,7 +9,7 @@ def main():
     sinais = detectar_cores_e_formas(args.input)
 
     if sinais:
-        print("Sinais detectados na imagem:")
+        print("Sinais e cores detectados na imagem:")
         for cor, forma in sinais:
             print(f"- {cor}: {forma}")
     else:
